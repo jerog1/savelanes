@@ -70,11 +70,11 @@ const gallery = [
           <defs>
             <clipPath id="brand-mark-clip"><circle cx="100" cy="100" r="89" /></clipPath>
           </defs>
-          <circle cx="100" cy="100" r="91" fill="#08a82a" stroke="#fff" stroke-width="12" />
-          <g class="brand-bike" clip-path="url(#brand-mark-clip)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="7">
-            <circle cx="61" cy="137" r="25" />
-            <circle cx="141" cy="137" r="25" />
-            <path d="M61 137 88 87l20 50H61M88 87h31l22 50M108 137 119 87M80 78h19M88 87 80 78M119 87l7-14m-4 0h19" />
+          <circle cx="100" cy="100" r="89" fill="#08a82a" stroke="#fff" stroke-width="14" />
+          <g class="brand-bike" clip-path="url(#brand-mark-clip)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
+            <circle cx="61" cy="139" r="24" />
+            <circle cx="141" cy="139" r="24" />
+            <path d="M61 139 92 89l26 50H61Z M92 89h30l19 50M118 139l4-50M92 89l-8-13m-8 0h18M122 89l8-15h17" />
           </g>
         </svg>
       </a>
@@ -105,10 +105,15 @@ const gallery = [
       </section>
 
       <section class="common-ground" aria-labelledby="common-ground-title">
-        <p class="section-label">Common ground</p>
-        <h2 id="common-ground-title">This is not cars versus bikes.</h2>
-        <p>Drivers, cyclists, pedestrians, transit riders, and local businesses all want the same things: safer streets, less congestion, and a city that uses public money wisely. Protected lanes give more people a safe way to make short trips without adding another car to crowded roads. Restoring a few car lanes downtown will not solve congestion because it encourages more driving and any short-term gain disappears. Toronto should be able to make evidence-based street decisions for its own communities.</p>
-        <a class="inline-source" href="https://www.cycleto.ca/cycle_toronto_v_ontario" target="_blank" rel="noreferrer">Read the evidence behind this argument at CycleTO ↗</a>
+        <div class="common-title">
+          <p class="section-label">Shared priorities</p>
+          <h2 id="common-ground-title">Safer streets and less congestion are goals we all share.</h2>
+        </div>
+        <div class="common-copy">
+          <p>Drivers, cyclists, pedestrians, transit riders, and local businesses all need streets that work. Protected lanes make short trips safer without adding another car to already crowded roads.</p>
+          <p class="common-callout">Toronto should be able to make evidence-based decisions about its own streets.</p>
+          <a class="inline-source" href="https://www.cycleto.ca/cycle_toronto_v_ontario" target="_blank" rel="noreferrer">Read CycleTO’s research and legal case ↗</a>
+        </div>
       </section>
 
       <section class="reasons" aria-labelledby="reasons-title">
@@ -131,19 +136,19 @@ const gallery = [
       </section>
 
       <section class="data" aria-labelledby="data-title">
-        <div class="section-heading"><p class="section-label">The numbers</p><h2 id="data-title">More cost. More risk. No congestion cure.</h2></div>
+        <div class="section-heading"><p class="section-label">The numbers</p><h2 id="data-title">The evidence is straightforward.</h2></div>
         <div class="chart-grid">
           <article class="chart-card">
-            <p class="chart-label">Estimated collisions after removal</p>
-            <div class="bar-row"><span>Today</span><i style="--bar:65%"></i><b>100</b></div>
-            <div class="bar-row danger"><span>After removal</span><i style="--bar:100%"></i><b>154</b></div>
-            <p>Ontario’s analysis estimated a more than 54% increase in collisions.</p>
+            <p class="chart-label">Safety</p>
+            <strong class="evidence-number">54%</strong>
+            <h3>More collisions estimated after removal.</h3>
+            <p>Ontario’s analysis estimates a more than 54% increase in collisions if protected lanes are removed.</p>
             <a class="source" href="https://www.thetrillium.ca/news/municipalities-transit-and-infrastructure/removing-bike-lanes-worsen-gridlock-increase-collisions-government-documents-10360308" target="_blank" rel="noreferrer">Source: The Trillium ↗</a>
           </article>
           <article class="chart-card">
             <p class="chart-label">Public money</p>
-            <div class="money-row"><span>Built</span><strong>$27M</strong><i style="--bar:56%"></i></div>
-            <div class="money-row danger"><span>To remove</span><strong>$48M+</strong><i style="--bar:100%"></i></div>
+            <strong class="evidence-number">$48M+</strong>
+            <h3>Estimated cost to remove existing bike lanes.</h3>
             <p>The city’s estimate covers only three of the six corridors now at risk.</p>
             <a class="source" href="https://www.toronto.ca/legdocs/mmis/2024/cc/bgrd/backgroundfile-250545.pdf" target="_blank" rel="noreferrer">Source: City Manager’s report ↗</a>
           </article>
@@ -242,23 +247,26 @@ const gallery = [
   nav a:hover, .text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
   .nav-donate { padding: 11px 17px; border-radius: 4px; background: #ffe26b; text-decoration: none; }
   .nav-donate:hover { background: var(--green); color: #fff; text-decoration: none; }
-  .hero { position: relative; min-height: min(610px, calc(100vh - 86px)); display: grid; place-items: center; overflow: hidden; isolation: isolate; }
+  .hero { position: relative; min-height: min(540px, calc(100vh - 86px)); display: grid; place-items: center; overflow: hidden; isolation: isolate; }
   .hero-image, .hero-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
   .hero-image { object-fit: cover; }
   .hero-shade { background: linear-gradient(90deg, rgba(0, 0, 0, .76) 0%, rgba(0, 0, 0, .42) 52%, rgba(0, 0, 0, .16) 100%); z-index: 1; }
   .hero-content { width: min(1100px, 88vw); position: relative; z-index: 2; color: #fff; }
   .eyebrow, .section-label { margin: 0 0 12px; font-size: .78rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
   h1, h2, h3, p { margin-top: 0; }
-  h1 { max-width: 720px; margin-bottom: 20px; font-size: clamp(3.2rem, 6.2vw, 5.6rem); line-height: .96; letter-spacing: -.06em; }
+  h1 { max-width: 680px; margin-bottom: 20px; font-size: clamp(3rem, 5.5vw, 4.9rem); line-height: .98; letter-spacing: -.055em; }
   .hero-copy { max-width: 550px; margin-bottom: 30px; font-size: clamp(1.05rem, 1.8vw, 1.25rem); line-height: 1.5; }
   .button { display: inline-block; padding: 15px 24px; border-radius: 4px; background: #ffe26b; color: #101410; font-weight: 850; text-decoration: none; }
   .button:hover { background: #fff; }
-  .intro, .reasons, .signup, .action { padding: clamp(60px, 8vw, 96px) clamp(24px, 7vw, 112px); }
-  .intro { max-width: 1040px; }
-  h2 { max-width: 810px; margin-bottom: 18px; font-size: clamp(2rem, 3.6vw, 3.35rem); line-height: 1.06; letter-spacing: -.045em; }
+  .intro, .reasons, .signup, .action { padding: clamp(48px, 6vw, 76px) clamp(24px, 7vw, 112px); }
+  .intro { max-width: 930px; }
+  h2 { max-width: 760px; margin-bottom: 16px; font-size: clamp(1.85rem, 3.05vw, 2.75rem); line-height: 1.08; letter-spacing: -.04em; }
   .intro > p:last-child { max-width: 740px; margin: 0; font-size: clamp(1.05rem, 1.6vw, 1.22rem); line-height: 1.62; }
-  .common-ground { padding: clamp(60px, 8vw, 96px) clamp(24px, 7vw, 112px); background: var(--ink); color: #fff; }
-  .common-ground h2 { max-width: 720px; } .common-ground > p:not(.section-label) { max-width: 900px; margin-bottom: 26px; font-size: clamp(1.12rem, 2vw, 1.42rem); line-height: 1.55; }
+  .common-ground { display:grid; grid-template-columns: minmax(0, .95fr) minmax(320px, .8fr); gap:clamp(36px, 7vw, 112px); padding:clamp(48px, 6vw, 76px) clamp(24px, 7vw, 112px); background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .common-ground h2 { max-width:650px; }
+  .common-copy { max-width:560px; padding-left:clamp(0px, 4vw, 56px); border-left:1px solid var(--line); }
+  .common-copy > p { margin-bottom:18px; font-size:1.05rem; line-height:1.62; }
+  .common-copy .common-callout { margin-top:26px; color:#416142; font-weight:800; }
   .inline-source { color: inherit; font-weight: 800; text-underline-offset: 4px; }
   .reasons { background: #fff; }
   .section-heading { margin-bottom: 32px; }
@@ -270,16 +278,22 @@ const gallery = [
   h3 { margin-bottom: 10px; font-size: 1.35rem; letter-spacing: -.03em; }
   .reason-copy p:last-child { margin-bottom: 0; line-height: 1.48; }
   .source { display: inline-block; margin-top: 18px; color: #416142; font-size: .82rem; font-weight: 750; line-height: 1.35; }
-  .data { padding: clamp(60px, 8vw, 96px) clamp(24px, 7vw, 112px); background: #e7f5e8; }
-  .chart-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-  .chart-card { padding: 28px; background: #fff; } .chart-label { margin-bottom: 26px; font-size: .85rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
-  .bar-row { display: grid; grid-template-columns: 108px 1fr 40px; gap: 12px; align-items: center; margin: 12px 0; font-weight: 800; } .bar-row i, .money-row i { display:block; height:18px; background: var(--green); width: var(--bar); } .bar-row.danger i, .money-row.danger i { background: #101410; }
-  .money-row { display:grid; grid-template-columns: 86px 82px 1fr; gap: 12px; align-items:center; margin: 16px 0; font-weight:800; } .money-row strong { font-size:1.35rem; letter-spacing:-.04em; }
-  .chart-card > p:not(.chart-label) { margin: 26px 0 0; line-height:1.45; }
-  .quote-section { display:grid; grid-template-columns: minmax(260px, .75fr) minmax(0, 1.25fr); min-height:400px; background:#fff; } .quote-section > img { width:100%; height:100%; min-height:320px; object-fit:cover; } .quote-section blockquote { margin:0; padding:clamp(36px,6vw,76px); align-self:center; } .quote-section blockquote p { max-width:720px; margin-bottom:24px; font-size:clamp(1.8rem,3.2vw,3.25rem); font-weight:900; line-height:1.02; letter-spacing:-.045em; } .quote-section blockquote footer { margin-bottom:20px; color:#416142; font-weight:800; } .quote-section blockquote a { font-weight:850; text-underline-offset:4px; }
-  .ford-quote { background:#101410; color:#fff; } .ford-quote blockquote footer { color:#aee8af; }
-  .map-section { display:grid; grid-template-columns: minmax(0,.85fr) minmax(320px,1.15fr); gap:clamp(36px,6vw,80px); align-items:center; padding:clamp(60px,8vw,96px) clamp(24px,7vw,112px); background:var(--cream); } .map-section > div > p:not(.section-label) { max-width:570px; margin-bottom:24px; font-size:1.05rem; line-height:1.55; } .route-map { width:100%; height:auto; }
-  .news { padding:clamp(60px,8vw,96px) clamp(24px,7vw,112px); background:var(--green); color:#fff; } .news-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; } .news-links a { min-height:104px; display:grid; align-content:start; gap:7px; padding:18px; background:#fff; color:var(--ink); font-size:1rem; font-weight:850; text-decoration:none; } .news-links a:hover { background:#ffe26b; } .news-links span { color:#416142; font-size:.73rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; } .news-links b { color:var(--green); font-size:1.1rem; }
+  .data { padding:clamp(48px, 6vw, 76px) clamp(24px, 7vw, 112px); background:#e7f5e8; }
+  .chart-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; }
+  .chart-card { padding:30px; background:#fff; border-top:5px solid var(--green); }
+  .chart-label { margin-bottom:15px; font-size:.75rem; font-weight:900; letter-spacing:.1em; text-transform:uppercase; }
+  .evidence-number { display:block; margin-bottom:8px; color:var(--green); font-size:clamp(2.6rem, 5vw, 4.1rem); line-height:.94; letter-spacing:-.065em; }
+  .chart-card h3 { margin-bottom:10px; font-size:1.25rem; }
+  .chart-card > p:not(.chart-label) { max-width:500px; margin:0; line-height:1.5; }
+  .quote-section { display:grid; grid-template-columns:minmax(260px, .7fr) minmax(0, 1.3fr); min-height:340px; background:#fff; }
+  .quote-section > img { width:100%; height:100%; min-height:300px; object-fit:cover; }
+  .quote-section blockquote { margin:0; padding:clamp(32px,5vw,64px); align-self:center; }
+  .quote-section blockquote p { max-width:670px; margin-bottom:20px; font-size:clamp(1.55rem,2.6vw,2.45rem); font-weight:850; line-height:1.1; letter-spacing:-.04em; }
+  .quote-section blockquote footer { margin-bottom:16px; color:#416142; font-weight:800; }
+  .quote-section blockquote a { font-weight:850; text-underline-offset:4px; }
+  .ford-quote { background:#eef3ea; color:var(--ink); } .ford-quote blockquote footer { color:#416142; }
+  .map-section { display:grid; grid-template-columns:minmax(0,.85fr) minmax(320px,1.15fr); gap:clamp(36px,6vw,80px); align-items:center; padding:clamp(48px,6vw,76px) clamp(24px,7vw,112px); background:var(--cream); } .map-section > div > p:not(.section-label) { max-width:570px; margin-bottom:24px; font-size:1.05rem; line-height:1.55; } .route-map { width:100%; height:auto; }
+  .news { padding:clamp(48px,6vw,76px) clamp(24px,7vw,112px); background:var(--green); color:#fff; } .news-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; } .news-links a { min-height:98px; display:grid; align-content:start; gap:7px; padding:18px; background:#fff; color:var(--ink); font-size:1rem; font-weight:850; text-decoration:none; } .news-links a:hover { background:#ffe26b; } .news-links span { color:#416142; font-size:.73rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; } .news-links b { color:var(--green); font-size:1.1rem; }
   .signup { display: grid; grid-template-columns: minmax(0, .9fr) minmax(330px, .7fr); gap: clamp(40px, 8vw, 120px); align-items: start; background: var(--cream); }
   .signup > div > p:last-child { max-width: 580px; margin-bottom: 0; font-size: 1.1rem; line-height: 1.5; }
   .signup-form { padding: 28px; background: #fff; border-top: 7px solid var(--green); }
@@ -289,9 +303,9 @@ const gallery = [
   .action-links { display: grid; gap: 18px; flex: 0 0 auto; }
   .text-link { font-weight: 800; }
   .partner-note { max-width: 250px; margin: 0; font-size: .78rem; line-height: 1.35; opacity: .8; }
-  .gallery { padding:clamp(70px,10vw,120px) 0; overflow:hidden; background:#fff; } .gallery-heading { padding:0 clamp(24px,7vw,112px); } .gallery-track { display:flex; gap:16px; width:max-content; padding:0 16px; animation: gallery-roll 45s linear infinite; } .gallery-track:hover { animation-play-state:paused; } .gallery-track img { width:310px; height:240px; object-fit:cover; } @keyframes gallery-roll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+  .gallery { padding:clamp(52px,7vw,86px) 0; overflow:hidden; background:#fff; } .gallery-heading { padding:0 clamp(24px,7vw,112px); } .gallery-track { display:flex; gap:16px; width:max-content; padding:0 16px; animation:gallery-roll 45s linear infinite; } .gallery-track:hover { animation-play-state:paused; } .gallery-track img { width:290px; height:220px; object-fit:cover; } @keyframes gallery-roll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
   .site-footer { display: grid; grid-template-columns:1.2fr 1fr 1fr; gap: 28px; padding: 32px clamp(24px, 7vw, 112px); background: #101410; color: #fff; font-size: .85rem; }
   .site-footer p { margin: 0; line-height:1.45; } .site-footer span { color:#b9c5b9; } .site-footer a { display:block; margin-bottom:8px; color:#fff; font-weight:750; }
   @media (prefers-reduced-motion: reduce) { .brand-bike { animation: none; } }
-  @media (max-width: 760px) { .site-header { height: 76px; } .brand-mark { width: 54px; height: 54px; } nav { gap: 14px; font-size: .82rem; } nav a:nth-child(-n+3) { display: none; } .nav-donate { padding: 9px 12px; } .hero { min-height: 620px; } .hero-shade { background: rgba(0,0,0,.55); } .reason-grid, .signup, .chart-grid, .map-section, .quote-section, .news-links { grid-template-columns: 1fr; } .quote-section > img { max-height:420px; } .action, .site-footer { display: block; } .action-links { margin-top: 30px; justify-items: start; } .site-footer p + p { margin-top: 16px; } .gallery-track { animation-duration:70s; } }
+  @media (max-width: 760px) { .site-header { height: 76px; } .brand-mark { width: 54px; height: 54px; } nav { gap: 14px; font-size: .82rem; } nav a:nth-child(-n+3) { display: none; } .nav-donate { padding: 9px 12px; } .hero { min-height:520px; } .hero-shade { background:rgba(0,0,0,.55); } .reason-grid, .signup, .chart-grid, .map-section, .quote-section, .news-links, .common-ground { grid-template-columns:1fr; } .common-copy { padding:0; border:0; } .quote-section > img { max-height:420px; } .action, .site-footer { display:block; } .action-links { margin-top:30px; justify-items:start; } .site-footer p + p { margin-top:16px; } .gallery-track { animation-duration:70s; } }
 </style>

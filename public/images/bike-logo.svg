@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="title">
   <title>Save Lanes bicycle</title>
-  <circle cx="100" cy="100" r="91" fill="#08a82a" stroke="#fff" stroke-width="12"/>
-  <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="7">
-    <circle cx="61" cy="137" r="25"/>
-    <circle cx="141" cy="137" r="25"/>
-    <path d="M61 137 88 87l20 50H61M88 87h31l22 50M108 137 119 87M80 78h19M88 87 80 78M119 87l7-14m-4 0h19"/>
+  <circle cx="100" cy="100" r="89" fill="#08a82a" stroke="#fff" stroke-width="14"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
+    <circle cx="61" cy="139" r="24"/>
+    <circle cx="141" cy="139" r="24"/>
+    <path d="M61 139 92 89l26 50H61Z M92 89h30l19 50M118 139l4-50M92 89l-8-13m-8 0h18M122 89l8-15h17"/>
   </g>
 </svg>
