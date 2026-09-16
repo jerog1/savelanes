@@ -5,18 +5,24 @@ const reasons = [
     stat: '54%',
     title: 'More collisions',
     text: 'Ontario’s own analysis estimates that removing protected lanes could increase collisions by more than 54%.',
+    source: 'Ontario internal documents, reported by The Trillium',
+    sourceUrl: 'https://www.thetrillium.ca/news/municipalities-transit-and-infrastructure/removing-bike-lanes-worsen-gridlock-increase-collisions-government-documents-10360308',
   },
   {
     image: '/images/cost.jpg',
     stat: '$48M+',
     title: 'Millions wasted',
     text: 'Toronto estimates it will cost more than $48 million to remove lanes that cost $27 million to build. That is only for three of the six corridors.',
+    source: 'City Manager’s report to Toronto City Council',
+    sourceUrl: 'https://www.toronto.ca/legdocs/mmis/2024/cc/bgrd/backgroundfile-250545.pdf',
   },
   {
     image: '/images/business.jpg',
     stat: '90%',
     title: 'Better for businesses',
     text: 'A peer-reviewed Bloor study found no negative economic impact. Ninety per cent of customers arrived on foot, by bike, or by transit.',
+    source: 'Bloor Annex and Korea Town Economic Impact Study',
+    sourceUrl: 'https://www.tcat.ca/wp-content/uploads/2017/12/Bloor-Economic-Impact-Study-Full-Report-2019-09-03.pdf',
   },
 ];
 ---
@@ -27,6 +33,7 @@ const reasons = [
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Save Toronto's protected bike lanes." />
+    <link rel="icon" type="image/svg+xml" href="/images/bike-logo.svg" />
     <title>Save Lanes, Save Lives</title>
   </head>
   <body>
@@ -36,7 +43,9 @@ const reasons = [
       </a>
       <nav aria-label="Main navigation">
         <a href="#why">Why it matters</a>
+        <a href="/about">About</a>
         <a href="#take-action">Take action</a>
+        <a class="nav-donate" href="https://www.cycleto.ca/donate" target="_blank" rel="noreferrer">Donate</a>
       </nav>
     </header>
 
@@ -70,6 +79,7 @@ const reasons = [
                 <p class="stat">{reason.stat}</p>
                 <h3>{reason.title}</h3>
                 <p>{reason.text}</p>
+                <a class="source" href={reason.sourceUrl} target="_blank" rel="noreferrer">Source: {reason.source} ↗</a>
               </div>
             </article>
           ))}
@@ -85,6 +95,7 @@ const reasons = [
         <div class="action-links">
           <a class="button" href="https://www.cycleto.ca/defendbloor" target="_blank" rel="noreferrer">Sign the petition</a>
           <a class="text-link" href="https://www.ola.org/en/office-assembly/whats-happening/how-contact-your-mpp" target="_blank" rel="noreferrer">Find your MPP <span aria-hidden="true">→</span></a>
+          <p class="partner-note">The petition link opens CycleTO’s Defend Bloor campaign.</p>
         </div>
       </section>
     </main>
@@ -105,9 +116,11 @@ const reasons = [
   .site-header { height: 86px; padding: 10px clamp(24px, 6vw, 94px); display: flex; align-items: center; justify-content: space-between; background: #fff; }
   .brand { display: inline-flex; align-items: center; }
   .brand img { width: 66px; height: 66px; object-fit: contain; }
-  nav { display: flex; gap: 32px; font-weight: 700; }
+  nav { display: flex; align-items: center; gap: 26px; font-weight: 700; }
   nav a, .text-link { text-decoration: none; }
   nav a:hover, .text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .nav-donate { padding: 11px 17px; border-radius: 4px; background: #ffe26b; text-decoration: none; }
+  .nav-donate:hover { background: var(--green); color: #fff; text-decoration: none; }
   .hero { position: relative; min-height: min(680px, calc(100vh - 86px)); display: grid; place-items: center; overflow: hidden; isolation: isolate; }
   .hero-image, .hero-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
   .hero-image { object-fit: cover; }
@@ -132,12 +145,14 @@ const reasons = [
   .stat { margin-bottom: 8px; color: var(--green); font-size: 2.4rem; font-weight: 900; letter-spacing: -.06em; }
   h3 { margin-bottom: 10px; font-size: 1.55rem; letter-spacing: -.04em; }
   .reason-copy p:last-child { margin-bottom: 0; line-height: 1.48; }
+  .source { display: inline-block; margin-top: 18px; color: #416142; font-size: .82rem; font-weight: 750; line-height: 1.35; }
   .action { display: flex; gap: 50px; align-items: end; justify-content: space-between; background: var(--green); color: #fff; }
   .action h2 { max-width: 700px; }
   .action > div:first-child > p:last-child { max-width: 630px; margin-bottom: 0; font-size: 1.1rem; line-height: 1.5; }
   .action-links { display: grid; gap: 18px; flex: 0 0 auto; }
   .text-link { font-weight: 800; }
+  .partner-note { max-width: 250px; margin: 0; font-size: .78rem; line-height: 1.35; opacity: .8; }
   footer { display: flex; justify-content: space-between; gap: 20px; padding: 26px clamp(24px, 7vw, 112px); background: #101410; color: #fff; font-size: .85rem; }
   footer p { margin: 0; }
-  @media (max-width: 760px) { .site-header { height: 76px; } .brand img { width: 54px; height: 54px; } nav { gap: 18px; font-size: .9rem; } .hero { min-height: 620px; } .hero-shade { background: rgba(0,0,0,.55); } .reason-grid { grid-template-columns: 1fr; } .action, footer { display: block; } .action-links { margin-top: 30px; justify-items: start; } footer p + p { margin-top: 12px; } }
+  @media (max-width: 760px) { .site-header { height: 76px; } .brand img { width: 54px; height: 54px; } nav { gap: 14px; font-size: .82rem; } nav a:nth-child(-n+2) { display: none; } .nav-donate { padding: 9px 12px; } .hero { min-height: 620px; } .hero-shade { background: rgba(0,0,0,.55); } .reason-grid { grid-template-columns: 1fr; } .action, footer { display: block; } .action-links { margin-top: 30px; justify-items: start; } footer p + p { margin-top: 12px; } }
 </style>
