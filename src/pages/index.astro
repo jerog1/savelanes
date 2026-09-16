@@ -16,6 +16,14 @@ const reasons = [
     source: 'City Manager’s report to Toronto City Council',
     sourceUrl: 'https://www.toronto.ca/legdocs/mmis/2024/cc/bgrd/backgroundfile-250545.pdf',
   },
+  {
+    image: '/images/business.jpg',
+    stat: 'Minimal',
+    title: 'Lasting traffic relief',
+    text: 'Ontario’s own analysis says removing lanes may bring negligible or short-lived congestion relief.',
+    source: 'Ontario internal documents, reported by CBC News',
+    sourceUrl: 'https://www.cbc.ca/news/canada/toronto/ontario-bike-lanes-internal-documents-1.7481729',
+  },
 ];
 
 const news = [
@@ -125,6 +133,21 @@ const gallery = [
         </figure>
       </section>
 
+      <section class="supporting-facts" aria-label="Local evidence">
+        <article>
+          <p class="proof-stat">No negative<br />economic impact</p>
+          <h2>Protected lanes did not hurt local business</h2>
+          <p>A peer-reviewed Bloor study, commissioned by the Bloor Annex and Korea Town BIAs, found no negative economic impact after the lane was installed.</p>
+          <a class="source" href="https://www.tcat.ca/wp-content/uploads/2017/12/Bloor-Economic-Impact-Study-Full-Report-2019-09-03.pdf" target="_blank" rel="noreferrer">Source: Bloor economic impact study ↗</a>
+        </article>
+        <article>
+          <p class="proof-stat">21–4</p>
+          <h2>Toronto City Council opposed the removals</h2>
+          <p>The province is overruling the council elected to decide how Toronto’s streets should work, despite a 21–4 vote against Bill 212.</p>
+          <a class="source" href="https://www.cbc.ca/news/canada/toronto/toronto-bike-lane-removal-city-council-1.7383223" target="_blank" rel="noreferrer">Source: CBC News ↗</a>
+        </article>
+      </section>
+
       <section class="common-ground" aria-labelledby="common-ground-title">
         <div class="common-title">
           <h2 id="common-ground-title">Safer streets and less congestion are goals we all share</h2>
@@ -134,18 +157,6 @@ const gallery = [
           <p class="common-callout">Toronto should be able to make evidence-based decisions about its own streets</p>
           <a class="inline-source" href="https://www.cycleto.ca/cycle_toronto_v_ontario" target="_blank" rel="noreferrer">Read CycleTO’s research and legal case ↗</a>
         </div>
-      </section>
-
-      <section class="congestion" aria-labelledby="congestion-title">
-        <div>
-          <h2 id="congestion-title">More car lanes do not solve congestion</h2>
-          <p>When safe bike routes let people replace short car trips, they free scarce road space for deliveries, transit, and people who need to drive. Adding general traffic lanes does the opposite: it invites more driving until the new space fills again.</p>
-          <a class="inline-source" href="https://www.nber.org/papers/w15376" target="_blank" rel="noreferrer">Read the congestion research ↗</a>
-        </div>
-        <blockquote>
-          <p>“Increased provision of interstate highways and major urban roads is met with a corresponding increase in vehicle-kilometers traveled.”</p>
-          <footer>Gilles Duranton and Matthew A Turner, <em>The Fundamental Law of Road Congestion</em></footer>
-        </blockquote>
       </section>
 
       <section class="quote-section chow-quote">
@@ -257,11 +268,6 @@ const gallery = [
   .common-copy > p { margin-bottom:18px; font-size:1.05rem; line-height:1.62; }
   .common-copy .common-callout { margin-top:26px; color:#416142; font-weight:800; }
   .inline-source { color: inherit; font-weight: 800; text-underline-offset: 4px; }
-  .congestion { display:grid; grid-template-columns:minmax(0, .95fr) minmax(300px, .75fr); gap:clamp(36px,7vw,108px); align-items:center; padding:clamp(48px,6vw,76px) clamp(24px,7vw,112px); background:#f1f6ef; border-bottom:1px solid var(--line); }
-  .congestion > div > p { max-width:620px; margin-bottom:22px; font-size:1.06rem; line-height:1.6; }
-  .congestion blockquote { margin:0; padding:30px; background:#fff; border-top:5px solid var(--green); }
-  .congestion blockquote p { margin-bottom:18px; font-size:1.28rem; font-weight:800; line-height:1.3; letter-spacing:-.025em; }
-  .congestion blockquote footer { color:#416142; font-size:.92rem; font-weight:750; line-height:1.45; }
   .reasons { background: #fff; }
   .section-heading { margin-bottom: 32px; }
   .reason-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -289,6 +295,11 @@ const gallery = [
   .car-flow .flow-bar i { width:94.2%; background:#1d251e; }
   .flow-row small { display:block; margin-top:6px; color:#4e5b4f; font-size:.78rem; font-weight:650; }
   .flow-conclusion { max-width:520px; margin:28px 0 0; padding-top:20px; border-top:1px solid var(--line); font-size:1.04rem; font-weight:750; line-height:1.45; }
+  .supporting-facts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; padding:clamp(48px,6vw,76px) clamp(24px,7vw,112px); background:#fff; }
+  .supporting-facts article { padding:30px; border-top:5px solid var(--green); background:var(--cream); }
+  .proof-stat { margin-bottom:17px; color:var(--green); font-size:clamp(1.8rem,3vw,2.65rem); font-weight:900; line-height:1; letter-spacing:-.055em; }
+  .supporting-facts h2 { margin-bottom:12px; font-size:1.5rem; }
+  .supporting-facts article > p:not(.proof-stat) { max-width:580px; margin-bottom:0; line-height:1.55; }
   .data { padding:clamp(48px, 6vw, 76px) clamp(24px, 7vw, 112px); background:#e7f5e8; }
   .chart-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; }
   .chart-card { padding:30px; background:#fff; border-top:5px solid var(--green); }
@@ -317,5 +328,5 @@ const gallery = [
   .gallery { padding:clamp(52px,7vw,86px) clamp(24px,7vw,112px); background:#fff; } .gallery-heading { margin-bottom:28px; } .gallery-grid { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:16px; } .gallery-grid img { display:block; width:100%; aspect-ratio:1; object-fit:cover; }
   .site-footer { display: grid; grid-template-columns:1.2fr 1fr 1fr; gap: 28px; padding: 32px clamp(24px, 7vw, 112px); background: #101410; color: #fff; font-size: .85rem; }
   .site-footer p { margin: 0; line-height:1.45; } .site-footer span { color:#b9c5b9; } .site-footer a { display:block; margin-bottom:8px; color:#fff; font-weight:750; }
-  @media (max-width: 760px) { .site-header { height: 76px; } .brand-mark { width: 54px; height: 54px; } nav { gap: 14px; font-size: .82rem; } nav a:nth-child(-n+3) { display: none; } .nav-petition { padding: 9px 12px; } .hero { min-height:520px; } .hero-shade { background:rgba(0,0,0,.55); } .hero-actions { align-items:stretch; flex-direction:column; } .hero-actions > a { text-align:center; } .reason-grid, .signup, .chart-grid, .map-section, .quote-section, .news-links, .common-ground, .bloor-flow, .congestion { grid-template-columns:1fr; } .common-copy { padding:0; border:0; } .quote-section > img { max-height:420px; } .ford-context { grid-column:auto; padding:0 clamp(32px,5vw,64px) clamp(36px,5vw,64px); } .action, .site-footer { display:block; } .action-links { margin-top:30px; justify-items:start; } .site-footer p + p { margin-top:16px; } .gallery-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 760px) { .site-header { height: 76px; } .brand-mark { width: 54px; height: 54px; } nav { gap: 14px; font-size: .82rem; } nav a:nth-child(-n+3) { display: none; } .nav-petition { padding: 9px 12px; } .hero { min-height:520px; } .hero-shade { background:rgba(0,0,0,.55); } .hero-actions { align-items:stretch; flex-direction:column; } .hero-actions > a { text-align:center; } .reason-grid, .signup, .chart-grid, .map-section, .quote-section, .news-links, .common-ground, .bloor-flow, .supporting-facts { grid-template-columns:1fr; } .common-copy { padding:0; border:0; } .quote-section > img { max-height:420px; } .ford-context { grid-column:auto; padding:0 clamp(32px,5vw,64px) clamp(36px,5vw,64px); } .action, .site-footer { display:block; } .action-links { margin-top:30px; justify-items:start; } .site-footer p + p { margin-top:16px; } .gallery-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); } }
 </style>
