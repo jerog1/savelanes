@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="title">
+  <title>Save Lanes bicycle</title>
+  <circle cx="100" cy="100" r="94" fill="#08a82a" stroke="#fff" stroke-width="9"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="59" cy="132" r="25" stroke-width="8"/>
+    <circle cx="144" cy="132" r="25" stroke-width="8"/>
+    <path d="M59 132 82 83l21 49H59l45-49 40 49M82 83h-15M104 83h22" stroke-width="8"/>
+    <path d="M78 78h18M126 77h16l7 14" stroke-width="8"/>
+  </g>
+</svg>
