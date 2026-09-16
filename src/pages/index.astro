@@ -67,8 +67,7 @@ const gallery = [
         <a href="#why">Why it matters</a>
         <a href="/about">About</a>
         <a href="#sign-up">Get a sign</a>
-        <a href="#take-action">Take action</a>
-        <a class="nav-donate" href="https://www.cycleto.ca/donate" target="_blank" rel="noreferrer">Donate</a>
+        <a class="nav-petition" href="https://www.cycleto.ca/defendbloor" target="_blank" rel="noreferrer">Sign petition</a>
       </nav>
     </header>
 
@@ -77,9 +76,13 @@ const gallery = [
         <img class="hero-image" src="/images/hero-bike-lane.jpg" alt="People cycling in a protected Toronto bike lane" />
         <div class="hero-shade"></div>
         <div class="hero-content">
-          <h1 id="hero-title">Save lanes<br />Save lives</h1>
+          <h1 id="hero-title">Save lanes,<br />Save lives.</h1>
           <p class="hero-copy">Ontario’s plan to remove Toronto’s protected bike lanes would make our streets less safe, waste public money, and fail to fix congestion</p>
-          <a class="button" href="#sign-up">Get a sticker, poster or yard sign</a>
+          <div class="hero-actions">
+            <a class="button" href="#sign-up">Get a sticker, poster or yard sign</a>
+            <a class="hero-petition" href="https://www.cycleto.ca/defendbloor" target="_blank" rel="noreferrer">Sign the petition</a>
+            <a class="hero-cycleto" href="https://www.cycleto.ca" target="_blank" rel="noreferrer">Visit CycleTO ↗</a>
+          </div>
         </div>
       </section>
 
@@ -93,7 +96,7 @@ const gallery = [
           <h2 id="reasons-title">The facts don’t support removal</h2>
         </div>
         <div class="reason-grid">
-          {reasons.slice(0, 2).map((reason) => (
+          {reasons.map((reason) => (
             <article class="reason-card">
               <img src={reason.image} alt="" loading="lazy" />
               <div class="reason-copy">
@@ -152,7 +155,7 @@ const gallery = [
         </blockquote>
       </section>
 
-      <section class="quote-section ford-quote text-quote">
+      <section class="quote-section ford-quote">
         <img src="/images/gallery/doug-ford.png" alt="Premier Doug Ford wearing a bicycle helmet" loading="lazy" />
         <blockquote>
           <p>“I want to work collaboratively with the Mayor … hopefully we can find alternatives.”</p>
@@ -167,7 +170,7 @@ const gallery = [
 
       <section class="map-section" aria-labelledby="map-title">
         <div><h2 id="map-title">The routes at risk</h2><p>The province’s current RFP covers Bloor, Yonge, and University/Avenue Road</p><a class="inline-source" href="https://www.cycleto.ca/what_happens_next_with_torontos_bike_lanes" target="_blank" rel="noreferrer">CycleTO’s current corridor details ↗</a></div>
-        <img class="route-map" src="/images/removal-map.png" alt="Map showing the Toronto bike lane removal corridors" loading="lazy" />
+        <img class="route-map" src="/images/removal-map.webp" alt="Map showing the Toronto bike lane removal corridors" loading="lazy" />
       </section>
 
       <section class="news" aria-labelledby="news-title">
@@ -226,8 +229,8 @@ const gallery = [
   nav { display: flex; align-items: center; gap: 26px; font-weight: 700; }
   nav a, .text-link { text-decoration: none; }
   nav a:hover, .text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
-  .nav-donate { padding: 11px 17px; border-radius: 4px; background: #ffe26b; text-decoration: none; }
-  .nav-donate:hover { background: var(--green); color: #fff; text-decoration: none; }
+  .nav-petition { padding: 11px 17px; border-radius: 4px; background: #ffe26b; text-decoration: none; }
+  .nav-petition:hover { background: var(--green); color: #fff; text-decoration: none; }
   .hero { position: relative; min-height: min(540px, calc(100vh - 86px)); display: grid; place-items: center; overflow: hidden; isolation: isolate; }
   .hero-image, .hero-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
   .hero-image { object-fit: cover; }
@@ -239,6 +242,10 @@ const gallery = [
   .hero-copy { max-width: 550px; margin-bottom: 30px; font-size: clamp(1.05rem, 1.8vw, 1.25rem); line-height: 1.5; }
   .button { display: inline-block; padding: 15px 24px; border-radius: 4px; background: #ffe26b; color: #101410; font-weight: 850; text-decoration: none; }
   .button:hover { background: #fff; }
+  .hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:14px; }
+  .hero-petition { padding:14px 18px; border:1px solid rgba(255,255,255,.82); border-radius:4px; color:#fff; font-weight:850; text-decoration:none; }
+  .hero-petition:hover { background:#fff; color:var(--ink); }
+  .hero-cycleto { color:#fff; font-weight:800; text-underline-offset:4px; }
   .intro, .reasons, .signup, .action { padding: clamp(48px, 6vw, 76px) clamp(24px, 7vw, 112px); }
   .intro { max-width: 930px; }
   h2 { max-width: 760px; margin-bottom: 16px; font-size: clamp(1.85rem, 3.05vw, 2.75rem); line-height: 1.08; letter-spacing: -.04em; }
@@ -283,13 +290,13 @@ const gallery = [
   .quote-section blockquote p { max-width:670px; margin-bottom:20px; font-size:clamp(1.55rem,2.6vw,2.45rem); font-weight:850; line-height:1.1; letter-spacing:-.04em; }
   .quote-section blockquote footer { margin-bottom:16px; color:#416142; font-weight:800; }
   .quote-section blockquote a { font-weight:850; text-underline-offset:4px; }
-  .ford-quote { background:#eef3ea; color:var(--ink); } .ford-quote blockquote footer { color:#416142; } .text-quote { display:block; min-height:0; } .text-quote > img { display:block; width:100%; height:clamp(240px, 34vw, 420px); min-height:0; object-fit:cover; object-position:center 36%; } .text-quote blockquote { max-width:980px; margin:0 auto; padding:clamp(40px,6vw,76px) clamp(24px,7vw,112px); } .ford-context { max-width:980px; margin:0 auto; padding:0 clamp(24px,7vw,112px) clamp(40px,6vw,76px); } .ford-context p { max-width:720px; margin:0 0 17px; padding-top:28px; border-top:1px solid #c5d4c5; font-size:1.06rem; font-weight:600; line-height:1.62; }
+  .ford-quote { background:#eef3ea; color:var(--ink); } .ford-quote blockquote footer { color:#416142; } .ford-quote > img { object-position:center 35%; } .ford-context { grid-column:2; max-width:760px; padding:0 clamp(32px,5vw,64px) clamp(36px,5vw,64px); } .ford-context p { max-width:720px; margin:0 0 17px; padding-top:24px; border-top:1px solid #c5d4c5; font-size:1.02rem; font-weight:600; line-height:1.58; }
   .map-section { display:grid; grid-template-columns:minmax(0,.85fr) minmax(320px,1.15fr); gap:clamp(36px,6vw,80px); align-items:center; padding:clamp(48px,6vw,76px) clamp(24px,7vw,112px); background:var(--cream); } .map-section > div > p:not(.section-label) { max-width:570px; margin-bottom:24px; font-size:1.05rem; line-height:1.55; } .route-map { width:100%; height:auto; }
   .news { padding:clamp(48px,6vw,76px) clamp(24px,7vw,112px); background:var(--green); color:#fff; } .news-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; } .news-links a { min-height:98px; display:grid; align-content:start; gap:7px; padding:18px; background:#fff; color:var(--ink); font-size:1rem; font-weight:850; text-decoration:none; } .news-links a:hover { background:#ffe26b; } .news-links span { color:#416142; font-size:.73rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; } .news-links b { color:var(--green); font-size:1.1rem; }
-  .signup { display: grid; grid-template-columns: minmax(0, .9fr) minmax(330px, .7fr); gap: clamp(40px, 8vw, 120px); align-items: start; background: var(--cream); }
+  .signup { display: grid; grid-template-columns: minmax(0, 480px) minmax(330px, 520px); justify-content:start; gap: clamp(40px, 6vw, 88px); align-items: start; background: var(--cream); }
   .signup > div > p:last-child { max-width: 580px; margin-bottom: 0; font-size: 1.1rem; line-height: 1.5; }
   .signup-form { padding: 28px; background: #fff; border-top: 7px solid var(--green); }
-  .action { display: flex; gap: 50px; align-items: end; justify-content: space-between; background: var(--green); color: #fff; }
+  .action { display: grid; grid-template-columns:minmax(0, 650px) minmax(240px, 320px); justify-content:start; gap:clamp(40px, 7vw, 110px); align-items: end; background: var(--green); color: #fff; }
   .action h2 { max-width: 700px; }
   .action > div:first-child > p:last-child { max-width: 630px; margin-bottom: 0; font-size: 1.1rem; line-height: 1.5; }
   .action-links { display: grid; gap: 18px; flex: 0 0 auto; }
@@ -298,5 +305,5 @@ const gallery = [
   .gallery { padding:clamp(52px,7vw,86px) clamp(24px,7vw,112px); background:#fff; } .gallery-heading { margin-bottom:28px; } .gallery-grid { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:16px; } .gallery-grid img { display:block; width:100%; aspect-ratio:1; object-fit:cover; }
   .site-footer { display: grid; grid-template-columns:1.2fr 1fr 1fr; gap: 28px; padding: 32px clamp(24px, 7vw, 112px); background: #101410; color: #fff; font-size: .85rem; }
   .site-footer p { margin: 0; line-height:1.45; } .site-footer span { color:#b9c5b9; } .site-footer a { display:block; margin-bottom:8px; color:#fff; font-weight:750; }
-  @media (max-width: 760px) { .site-header { height: 76px; } .brand-mark { width: 54px; height: 54px; } nav { gap: 14px; font-size: .82rem; } nav a:nth-child(-n+3) { display: none; } .nav-donate { padding: 9px 12px; } .hero { min-height:520px; } .hero-shade { background:rgba(0,0,0,.55); } .reason-grid, .signup, .chart-grid, .map-section, .quote-section, .news-links, .common-ground, .what-works, .congestion { grid-template-columns:1fr; } .common-copy { padding:0; border:0; } .quote-section > img { max-height:420px; } .action, .site-footer { display:block; } .action-links { margin-top:30px; justify-items:start; } .site-footer p + p { margin-top:16px; } .gallery-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 760px) { .site-header { height: 76px; } .brand-mark { width: 54px; height: 54px; } nav { gap: 14px; font-size: .82rem; } nav a:nth-child(-n+3) { display: none; } .nav-petition { padding: 9px 12px; } .hero { min-height:520px; } .hero-shade { background:rgba(0,0,0,.55); } .hero-actions { align-items:stretch; flex-direction:column; } .hero-actions > a { text-align:center; } .reason-grid, .signup, .chart-grid, .map-section, .quote-section, .news-links, .common-ground, .what-works, .congestion { grid-template-columns:1fr; } .common-copy { padding:0; border:0; } .quote-section > img { max-height:420px; } .ford-context { grid-column:auto; padding:0 clamp(32px,5vw,64px) clamp(36px,5vw,64px); } .action, .site-footer { display:block; } .action-links { margin-top:30px; justify-items:start; } .site-footer p + p { margin-top:16px; } .gallery-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); } }
 </style>
