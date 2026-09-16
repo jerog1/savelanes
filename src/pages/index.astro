@@ -1,0 +1,144 @@
+---
+const reasons = [
+  {
+    image: '/images/safety.jpg',
+    stat: '54%',
+    title: 'Less safe',
+    text: 'Ontario’s own internal analysis estimates that removing protected lanes will increase collisions by more than 54% for all road users.',
+  },
+  {
+    image: '/images/cost.jpg',
+    stat: '$48M+',
+    title: 'Wasted public money',
+    text: 'Toronto estimates more than $48 million to remove lanes that cost $27 million to build. That estimate covers only three of the six corridors.',
+  },
+  {
+    image: '/images/business.jpg',
+    stat: '90%',
+    title: 'Good for neighbourhoods',
+    text: 'A peer-reviewed Bloor study found no negative economic impact. Ninety per cent of customers arrived on foot, by bike, or by transit.',
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Save Toronto's protected bike lanes." />
+    <title>Save Lanes, Save Lives</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Save Lanes home">
+        <img src="/images/save-lanes-logo.png" alt="Save Lanes, Save Lives" />
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#why">Why it matters</a>
+        <a href="#take-action">Take action</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img class="hero-image" src="/images/hero-bike-lane.jpg" alt="People cycling in a protected Toronto bike lane" />
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Toronto’s protected bike lanes are being removed.</p>
+          <h1 id="hero-title">Save lanes.<br />Save lives.</h1>
+          <p class="hero-copy">The evidence is clear: removing them makes our streets less safe, costs millions, and will not solve gridlock.</p>
+          <a class="button" href="#take-action">Take action</a>
+        </div>
+      </section>
+
+      <section class="intro" id="why" aria-labelledby="intro-title">
+        <p class="section-label">The case is simple</p>
+        <h2 id="intro-title">This is not a fight about cycling.</h2>
+        <p>Ontario is removing about 19 kilometres of protected bike lanes on six Toronto streets. The province’s own documents point to more collisions and little lasting congestion relief—while the city faces years of disruption to undo infrastructure that already works.</p>
+      </section>
+
+      <section class="reasons" aria-labelledby="reasons-title">
+        <div class="section-heading">
+          <p class="section-label">What’s at stake</p>
+          <h2 id="reasons-title">The facts don’t support removal.</h2>
+        </div>
+        <div class="reason-grid">
+          {reasons.map((reason) => (
+            <article class="reason-card">
+              <img src={reason.image} alt="" loading="lazy" />
+              <div class="reason-copy">
+                <p class="stat">{reason.stat}</p>
+                <h3>{reason.title}</h3>
+                <p>{reason.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="action" id="take-action" aria-labelledby="action-title">
+        <div>
+          <p class="section-label">Make your voice heard</p>
+          <h2 id="action-title">Tell Ontario to keep Toronto’s protected bike lanes.</h2>
+          <p>Join the existing Defend Bloor campaign and let your MPP know that safer streets should not be dismantled.</p>
+        </div>
+        <div class="action-links">
+          <a class="button" href="https://www.cycleto.ca/defendbloor" target="_blank" rel="noreferrer">Sign the petition</a>
+          <a class="text-link" href="https://www.ola.org/en/office-assembly/whats-happening/how-contact-your-mpp" target="_blank" rel="noreferrer">Find your MPP <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Save Lanes, Save Lives</p>
+      <p>Facts summarized from publicly available government documents, research, and reporting.</p>
+    </footer>
+  </body>
+</html>
+
+<style>
+  :root { --green: #08a82a; --ink: #101410; --cream: #f6f4ee; --line: #dde1d9; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; color: var(--ink); background: var(--cream); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  a { color: inherit; }
+  .site-header { height: 86px; padding: 10px clamp(24px, 6vw, 94px); display: flex; align-items: center; justify-content: space-between; background: #fff; }
+  .brand { display: inline-flex; align-items: center; }
+  .brand img { width: 66px; height: 66px; object-fit: contain; }
+  nav { display: flex; gap: 32px; font-weight: 700; }
+  nav a, .text-link { text-decoration: none; }
+  nav a:hover, .text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .hero { position: relative; min-height: min(680px, calc(100vh - 86px)); display: grid; place-items: center; overflow: hidden; isolation: isolate; }
+  .hero-image, .hero-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .hero-image { object-fit: cover; }
+  .hero-shade { background: linear-gradient(90deg, rgba(0, 0, 0, .76) 0%, rgba(0, 0, 0, .42) 52%, rgba(0, 0, 0, .16) 100%); z-index: 1; }
+  .hero-content { width: min(1100px, 88vw); position: relative; z-index: 2; color: #fff; }
+  .eyebrow, .section-label { margin: 0 0 12px; font-size: .78rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+  h1, h2, h3, p { margin-top: 0; }
+  h1 { max-width: 780px; margin-bottom: 20px; font-size: clamp(3.5rem, 8vw, 7.2rem); line-height: .91; letter-spacing: -.075em; }
+  .hero-copy { max-width: 580px; margin-bottom: 32px; font-size: clamp(1.06rem, 2vw, 1.35rem); line-height: 1.45; }
+  .button { display: inline-block; padding: 15px 24px; border-radius: 4px; background: #ffe26b; color: #101410; font-weight: 850; text-decoration: none; }
+  .button:hover { background: #fff; }
+  .intro, .reasons, .action { padding: clamp(70px, 10vw, 140px) clamp(24px, 7vw, 112px); }
+  .intro { max-width: 1050px; }
+  h2 { max-width: 850px; margin-bottom: 22px; font-size: clamp(2.2rem, 4.5vw, 4.4rem); line-height: .98; letter-spacing: -.055em; }
+  .intro > p:last-child { max-width: 760px; margin: 0; font-size: clamp(1.1rem, 2vw, 1.35rem); line-height: 1.55; }
+  .reasons { background: #fff; }
+  .section-heading { margin-bottom: 42px; }
+  .reason-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .reason-card { background: var(--cream); }
+  .reason-card > img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .reason-copy { padding: 24px; }
+  .stat { margin-bottom: 8px; color: var(--green); font-size: 2.4rem; font-weight: 900; letter-spacing: -.06em; }
+  h3 { margin-bottom: 10px; font-size: 1.55rem; letter-spacing: -.04em; }
+  .reason-copy p:last-child { margin-bottom: 0; line-height: 1.48; }
+  .action { display: flex; gap: 50px; align-items: end; justify-content: space-between; background: var(--green); color: #fff; }
+  .action h2 { max-width: 700px; }
+  .action > div:first-child > p:last-child { max-width: 630px; margin-bottom: 0; font-size: 1.1rem; line-height: 1.5; }
+  .action-links { display: grid; gap: 18px; flex: 0 0 auto; }
+  .text-link { font-weight: 800; }
+  footer { display: flex; justify-content: space-between; gap: 20px; padding: 26px clamp(24px, 7vw, 112px); background: #101410; color: #fff; font-size: .85rem; }
+  footer p { margin: 0; }
+  @media (max-width: 760px) { .site-header { height: 76px; } .brand img { width: 54px; height: 54px; } nav { gap: 18px; font-size: .9rem; } .hero { min-height: 620px; } .hero-shade { background: rgba(0,0,0,.55); } .reason-grid { grid-template-columns: 1fr; } .action, footer { display: block; } .action-links { margin-top: 30px; justify-items: start; } footer p + p { margin-top: 12px; } }
+</style>
