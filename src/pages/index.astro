@@ -16,14 +16,6 @@ const reasons = [
     source: 'City Manager’s report to Toronto City Council',
     sourceUrl: 'https://www.toronto.ca/legdocs/mmis/2024/cc/bgrd/backgroundfile-250545.pdf',
   },
-  {
-    image: '/images/business.jpg',
-    stat: '90%',
-    title: 'Better for businesses',
-    text: 'A peer-reviewed Bloor study found no negative economic impact. Most customers arrived on foot, by bike, or by transit.',
-    source: 'Bloor Annex and Korea Town Economic Impact Study',
-    sourceUrl: 'https://www.tcat.ca/wp-content/uploads/2017/12/Bloor-Economic-Impact-Study-Full-Report-2019-09-03.pdf',
-  },
 ];
 
 const news = [
@@ -109,17 +101,28 @@ const gallery = [
         </div>
       </section>
 
-      <section class="what-works" aria-labelledby="what-works-title">
-        <div>
-          <h2 id="what-works-title">Protected lanes work for local business</h2>
-          <p>A peer-reviewed Bloor study found no negative economic impact after the bike lane was installed</p>
+      <section class="bloor-flow" aria-labelledby="bloor-flow-title">
+        <div class="flow-intro">
+          <h2 id="bloor-flow-title">Bike lanes make room for everyone</h2>
+          <p>Safe routes give people another way to make short trips, leaving road space for transit, deliveries, and people who need to drive</p>
+          <div class="growth-note"><strong>+40–90%</strong><span>cycling on Bloor after protected lanes arrived</span></div>
+          <a class="source" href="https://www.toronto.ca/legdocs/mmis/2024/cc/bgrd/backgroundfile-250545.pdf" target="_blank" rel="noreferrer">Source: City Manager’s report ↗</a>
         </div>
-        <article class="positive-card">
-          <p class="stat">{reasons[2].stat}</p>
-          <h3>of customers arrived without a car</h3>
-          <p>{reasons[2].text}</p>
-          <a class="source" href={reasons[2].sourceUrl} target="_blank" rel="noreferrer">Source: {reasons[2].source} ↗</a>
-        </article>
+        <figure class="flow-card">
+          <figcaption>Rush hour on Bloor <span>5–7 p.m.</span></figcaption>
+          <div class="flow-row bike-flow">
+            <div class="flow-label"><span>Bike lane</span><strong>1,849</strong></div>
+            <div class="flow-bar"><i></i></div>
+            <small>bike and micromobility trips</small>
+          </div>
+          <div class="flow-row car-flow">
+            <div class="flow-label"><span>Adjacent car lane</span><strong>1,741</strong></div>
+            <div class="flow-bar"><i></i></div>
+            <small>motor vehicles</small>
+          </div>
+          <p class="flow-conclusion">The bike lane carried a full share of rush-hour travel without adding another car to traffic</p>
+          <a class="source" href="https://www.torontotoday.ca/local/transportation-infrastructure/bikes-outnumber-cars-bloor-street-west-rush-hour-data-10855921" target="_blank" rel="noreferrer">Source: Bloor rush-hour count ↗</a>
+        </figure>
       </section>
 
       <section class="common-ground" aria-labelledby="common-ground-title">
@@ -269,12 +272,23 @@ const gallery = [
   h3 { margin-bottom: 10px; font-size: 1.35rem; letter-spacing: -.03em; }
   .reason-copy p:last-child { margin-bottom: 0; line-height: 1.48; }
   .source { display: inline-block; margin-top: 18px; color: #416142; font-size: .82rem; font-weight: 750; line-height: 1.35; }
-  .what-works { display:grid; grid-template-columns:minmax(0, .95fr) minmax(300px, .7fr); gap:clamp(32px, 7vw, 108px); align-items:center; padding:clamp(48px,6vw,76px) clamp(24px,7vw,112px); background:#e7f5e8; }
-  .what-works > div > p { max-width:620px; margin:0; font-size:1.08rem; line-height:1.55; }
-  .positive-card { padding:30px; background:#fff; border-top:5px solid var(--green); }
-  .positive-card .stat { margin-bottom:5px; }
-  .positive-card h3 { margin-bottom:10px; font-size:1.25rem; }
-  .positive-card > p:not(.stat) { margin:0; line-height:1.5; }
+  .bloor-flow { display:grid; grid-template-columns:minmax(0, .83fr) minmax(330px, 1fr); gap:clamp(42px,7vw,112px); align-items:center; padding:clamp(52px,6vw,82px) clamp(24px,7vw,112px); background:#e7f5e8; }
+  .flow-intro > p { max-width:560px; margin-bottom:25px; font-size:1.08rem; line-height:1.58; }
+  .growth-note { display:flex; align-items:baseline; gap:14px; max-width:480px; margin-bottom:4px; padding:18px 0; border-top:1px solid #bcd5be; border-bottom:1px solid #bcd5be; }
+  .growth-note strong { color:var(--green); font-size:clamp(2.3rem,4.2vw,3.4rem); line-height:1; letter-spacing:-.06em; }
+  .growth-note span { max-width:190px; font-weight:800; line-height:1.25; }
+  .flow-card { margin:0; padding:30px; background:#fff; border-top:5px solid var(--green); }
+  .flow-card figcaption { margin-bottom:27px; font-size:1.15rem; font-weight:900; letter-spacing:-.02em; }
+  .flow-card figcaption span { margin-left:8px; color:#416142; font-size:.82rem; font-weight:750; letter-spacing:0; }
+  .flow-row + .flow-row { margin-top:24px; }
+  .flow-label { display:flex; justify-content:space-between; gap:16px; margin-bottom:9px; font-weight:800; }
+  .flow-label strong { font-size:1.45rem; letter-spacing:-.045em; }
+  .flow-bar { height:18px; overflow:hidden; background:#e3e7df; }
+  .flow-bar i { display:block; height:100%; }
+  .bike-flow .flow-bar i { width:100%; background:var(--green); }
+  .car-flow .flow-bar i { width:94.2%; background:#1d251e; }
+  .flow-row small { display:block; margin-top:6px; color:#4e5b4f; font-size:.78rem; font-weight:650; }
+  .flow-conclusion { max-width:520px; margin:28px 0 0; padding-top:20px; border-top:1px solid var(--line); font-size:1.04rem; font-weight:750; line-height:1.45; }
   .data { padding:clamp(48px, 6vw, 76px) clamp(24px, 7vw, 112px); background:#e7f5e8; }
   .chart-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; }
   .chart-card { padding:30px; background:#fff; border-top:5px solid var(--green); }
@@ -303,5 +317,5 @@ const gallery = [
   .gallery { padding:clamp(52px,7vw,86px) clamp(24px,7vw,112px); background:#fff; } .gallery-heading { margin-bottom:28px; } .gallery-grid { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:16px; } .gallery-grid img { display:block; width:100%; aspect-ratio:1; object-fit:cover; }
   .site-footer { display: grid; grid-template-columns:1.2fr 1fr 1fr; gap: 28px; padding: 32px clamp(24px, 7vw, 112px); background: #101410; color: #fff; font-size: .85rem; }
   .site-footer p { margin: 0; line-height:1.45; } .site-footer span { color:#b9c5b9; } .site-footer a { display:block; margin-bottom:8px; color:#fff; font-weight:750; }
-  @media (max-width: 760px) { .site-header { height: 76px; } .brand-mark { width: 54px; height: 54px; } nav { gap: 14px; font-size: .82rem; } nav a:nth-child(-n+3) { display: none; } .nav-petition { padding: 9px 12px; } .hero { min-height:520px; } .hero-shade { background:rgba(0,0,0,.55); } .hero-actions { align-items:stretch; flex-direction:column; } .hero-actions > a { text-align:center; } .reason-grid, .signup, .chart-grid, .map-section, .quote-section, .news-links, .common-ground, .what-works, .congestion { grid-template-columns:1fr; } .common-copy { padding:0; border:0; } .quote-section > img { max-height:420px; } .ford-context { grid-column:auto; padding:0 clamp(32px,5vw,64px) clamp(36px,5vw,64px); } .action, .site-footer { display:block; } .action-links { margin-top:30px; justify-items:start; } .site-footer p + p { margin-top:16px; } .gallery-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 760px) { .site-header { height: 76px; } .brand-mark { width: 54px; height: 54px; } nav { gap: 14px; font-size: .82rem; } nav a:nth-child(-n+3) { display: none; } .nav-petition { padding: 9px 12px; } .hero { min-height:520px; } .hero-shade { background:rgba(0,0,0,.55); } .hero-actions { align-items:stretch; flex-direction:column; } .hero-actions > a { text-align:center; } .reason-grid, .signup, .chart-grid, .map-section, .quote-section, .news-links, .common-ground, .bloor-flow, .congestion { grid-template-columns:1fr; } .common-copy { padding:0; border:0; } .quote-section > img { max-height:420px; } .ford-context { grid-column:auto; padding:0 clamp(32px,5vw,64px) clamp(36px,5vw,64px); } .action, .site-footer { display:block; } .action-links { margin-top:30px; justify-items:start; } .site-footer p + p { margin-top:16px; } .gallery-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); } }
 </style>
