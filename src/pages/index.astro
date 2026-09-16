@@ -9,7 +9,7 @@ const reasons = [
     sourceUrl: 'https://www.thetrillium.ca/news/municipalities-transit-and-infrastructure/removing-bike-lanes-worsen-gridlock-increase-collisions-government-documents-10360308',
   },
   {
-    image: '/images/cost.jpg',
+    image: '/images/cost-construction.jpg',
     stat: '$48M+',
     title: 'Millions wasted',
     text: 'Toronto estimates it will cost more than $48 million to remove lanes that cost $27 million to build. That is only for three of the six corridors.',
@@ -46,7 +46,17 @@ const reasons = [
   <body>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Save Lanes home">
-        <img src="/images/bike-logo.svg" alt="Save Lanes" />
+        <svg class="brand-mark" viewBox="0 0 200 200" role="img" aria-label="Save Lanes bicycle logo">
+          <defs>
+            <clipPath id="brand-mark-clip"><circle cx="100" cy="100" r="89" /></clipPath>
+          </defs>
+          <circle cx="100" cy="100" r="94" fill="#08a82a" stroke="#fff" stroke-width="9" />
+          <g class="brand-bike" clip-path="url(#brand-mark-clip)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="8">
+            <circle cx="62" cy="135" r="26" />
+            <circle cx="140" cy="135" r="26" />
+            <path d="M62 135 89 84l18 51H62l37-51h23l18 51M89 84h-17M83 78h21M122 78h18l5 12" />
+          </g>
+        </svg>
       </a>
       <nav aria-label="Main navigation">
         <a href="#why">Why it matters</a>
@@ -134,7 +144,9 @@ const reasons = [
   a { color: inherit; }
   .site-header { height: 86px; padding: 10px clamp(24px, 6vw, 94px); display: flex; align-items: center; justify-content: space-between; background: #fff; }
   .brand { display: inline-flex; align-items: center; }
-  .brand img { width: 66px; height: 66px; object-fit: contain; }
+  .brand-mark { width: 66px; height: 66px; overflow: visible; }
+  .brand-bike { animation: bike-arrives .9s cubic-bezier(.2,.8,.2,1) .08s both; transform-box: view-box; transform-origin: center; }
+  @keyframes bike-arrives { from { transform: translateX(-140px); } 72% { transform: translateX(7px); } to { transform: translateX(0); } }
   nav { display: flex; align-items: center; gap: 26px; font-weight: 700; }
   nav a, .text-link { text-decoration: none; }
   nav a:hover, .text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
@@ -176,5 +188,6 @@ const reasons = [
   .partner-note { max-width: 250px; margin: 0; font-size: .78rem; line-height: 1.35; opacity: .8; }
   footer { display: flex; justify-content: space-between; gap: 20px; padding: 26px clamp(24px, 7vw, 112px); background: #101410; color: #fff; font-size: .85rem; }
   footer p { margin: 0; }
-  @media (max-width: 760px) { .site-header { height: 76px; } .brand img { width: 54px; height: 54px; } nav { gap: 14px; font-size: .82rem; } nav a:nth-child(-n+3) { display: none; } .nav-donate { padding: 9px 12px; } .hero { min-height: 620px; } .hero-shade { background: rgba(0,0,0,.55); } .reason-grid, .signup { grid-template-columns: 1fr; } .action, footer { display: block; } .action-links { margin-top: 30px; justify-items: start; } footer p + p { margin-top: 12px; } }
+  @media (prefers-reduced-motion: reduce) { .brand-bike { animation: none; } }
+  @media (max-width: 760px) { .site-header { height: 76px; } .brand-mark { width: 54px; height: 54px; } nav { gap: 14px; font-size: .82rem; } nav a:nth-child(-n+3) { display: none; } .nav-donate { padding: 9px 12px; } .hero { min-height: 620px; } .hero-shade { background: rgba(0,0,0,.55); } .reason-grid, .signup { grid-template-columns: 1fr; } .action, footer { display: block; } .action-links { margin-top: 30px; justify-items: start; } footer p + p { margin-top: 12px; } }
 </style>
