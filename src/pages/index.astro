@@ -27,10 +27,10 @@ const reasons = [
 ];
 
 const news = [
-  { outlet: 'The Guardian', title: 'Removing Toronto bike lanes will make traffic worse, official document shows', url: 'https://www.theguardian.com/world/2024/nov/22/toronto-bike-lane-removal-congestion' },
-  { outlet: 'Global News', title: 'Ford government passes law to remove Ontario bike lanes', url: 'https://globalnews.ca/news/10887272/ontario-bike-lane-removal-law-passes/' },
-  { outlet: 'The Green Line', title: 'Toronto bike lane removals: what they mean for road safety', url: 'https://thegreenline.to/issue/toronto-bike-lane-removals-road-safety/' },
-  { outlet: 'The Trillium', title: 'Government documents warn removals could worsen gridlock and collisions', url: 'https://www.thetrillium.ca/news/municipalities-transit-and-infrastructure/removing-bike-lanes-worsen-gridlock-increase-collisions-government-documents-10360308' },
+  { outlet: 'Global News', title: 'City report puts the cost of removal at $48 million', url: 'https://globalnews.ca/news/10868485/toronto-bike-lane-removal-cost-congestion-blame/' },
+  { outlet: 'Global News', title: 'Ford dismisses Toronto’s $48-million removal estimate', url: 'https://globalnews.ca/news/10877114/ontario-doug-ford-bike-lane-removal-cost-hogwash/' },
+  { outlet: 'The Trillium', title: 'Government documents warn removal could worsen collisions and gridlock', url: 'https://www.thetrillium.ca/news/municipalities-transit-and-infrastructure/removing-bike-lanes-worsen-gridlock-increase-collisions-government-documents-10360308' },
+  { outlet: 'TVO Today', title: 'Is there a right to bike lanes? Bill 212’s Charter challenge explained', url: 'https://www.tvo.org/article/is-there-a-right-to-bike-lanes-bill-212s-charter-challenge-explained' },
   { outlet: 'CycleTO', title: 'What happens next with Toronto’s bike lanes?', url: 'https://www.cycleto.ca/what_happens_next_with_torontos_bike_lanes' },
 ];
 
@@ -93,7 +93,7 @@ const gallery = [
           <h2 id="reasons-title">The facts don’t support removal</h2>
         </div>
         <div class="reason-grid">
-          {reasons.map((reason) => (
+          {reasons.slice(0, 2).map((reason) => (
             <article class="reason-card">
               <img src={reason.image} alt="" loading="lazy" />
               <div class="reason-copy">
@@ -105,6 +105,19 @@ const gallery = [
             </article>
           ))}
         </div>
+      </section>
+
+      <section class="what-works" aria-labelledby="what-works-title">
+        <div>
+          <h2 id="what-works-title">Protected lanes work for local business</h2>
+          <p>A peer-reviewed Bloor study found no negative economic impact after the bike lane was installed</p>
+        </div>
+        <article class="positive-card">
+          <p class="stat">{reasons[2].stat}</p>
+          <h3>of customers arrived without a car</h3>
+          <p>{reasons[2].text}</p>
+          <a class="source" href={reasons[2].sourceUrl} target="_blank" rel="noreferrer">Source: {reasons[2].source} ↗</a>
+        </article>
       </section>
 
       <section class="common-ground" aria-labelledby="common-ground-title">
@@ -133,6 +146,7 @@ const gallery = [
       </section>
 
       <section class="quote-section ford-quote text-quote">
+        <img src="/images/gallery/doug-ford.png" alt="Premier Doug Ford wearing a bicycle helmet" loading="lazy" />
         <blockquote>
           <p>“I want to work collaboratively with the Mayor … hopefully we can find alternatives.”</p>
           <footer>Premier Doug Ford, June 2025</footer>
@@ -228,6 +242,12 @@ const gallery = [
   h3 { margin-bottom: 10px; font-size: 1.35rem; letter-spacing: -.03em; }
   .reason-copy p:last-child { margin-bottom: 0; line-height: 1.48; }
   .source { display: inline-block; margin-top: 18px; color: #416142; font-size: .82rem; font-weight: 750; line-height: 1.35; }
+  .what-works { display:grid; grid-template-columns:minmax(0, .95fr) minmax(300px, .7fr); gap:clamp(32px, 7vw, 108px); align-items:center; padding:clamp(48px,6vw,76px) clamp(24px,7vw,112px); background:#e7f5e8; }
+  .what-works > div > p { max-width:620px; margin:0; font-size:1.08rem; line-height:1.55; }
+  .positive-card { padding:30px; background:#fff; border-top:5px solid var(--green); }
+  .positive-card .stat { margin-bottom:5px; }
+  .positive-card h3 { margin-bottom:10px; font-size:1.25rem; }
+  .positive-card > p:not(.stat) { margin:0; line-height:1.5; }
   .data { padding:clamp(48px, 6vw, 76px) clamp(24px, 7vw, 112px); background:#e7f5e8; }
   .chart-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; }
   .chart-card { padding:30px; background:#fff; border-top:5px solid var(--green); }
@@ -241,7 +261,7 @@ const gallery = [
   .quote-section blockquote p { max-width:670px; margin-bottom:20px; font-size:clamp(1.55rem,2.6vw,2.45rem); font-weight:850; line-height:1.1; letter-spacing:-.04em; }
   .quote-section blockquote footer { margin-bottom:16px; color:#416142; font-weight:800; }
   .quote-section blockquote a { font-weight:850; text-underline-offset:4px; }
-  .ford-quote { background:#eef3ea; color:var(--ink); } .ford-quote blockquote footer { color:#416142; } .text-quote { display:block; min-height:0; } .text-quote blockquote { max-width:980px; margin:0 auto; padding:clamp(40px,6vw,76px) clamp(24px,7vw,112px); }
+  .ford-quote { background:#eef3ea; color:var(--ink); } .ford-quote blockquote footer { color:#416142; } .text-quote { display:block; min-height:0; } .text-quote > img { display:block; width:100%; height:clamp(240px, 34vw, 420px); min-height:0; object-fit:cover; object-position:center 36%; } .text-quote blockquote { max-width:980px; margin:0 auto; padding:clamp(40px,6vw,76px) clamp(24px,7vw,112px); }
   .map-section { display:grid; grid-template-columns:minmax(0,.85fr) minmax(320px,1.15fr); gap:clamp(36px,6vw,80px); align-items:center; padding:clamp(48px,6vw,76px) clamp(24px,7vw,112px); background:var(--cream); } .map-section > div > p:not(.section-label) { max-width:570px; margin-bottom:24px; font-size:1.05rem; line-height:1.55; } .route-map { width:100%; height:auto; }
   .news { padding:clamp(48px,6vw,76px) clamp(24px,7vw,112px); background:var(--green); color:#fff; } .news-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; } .news-links a { min-height:98px; display:grid; align-content:start; gap:7px; padding:18px; background:#fff; color:var(--ink); font-size:1rem; font-weight:850; text-decoration:none; } .news-links a:hover { background:#ffe26b; } .news-links span { color:#416142; font-size:.73rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; } .news-links b { color:var(--green); font-size:1.1rem; }
   .signup { display: grid; grid-template-columns: minmax(0, .9fr) minmax(330px, .7fr); gap: clamp(40px, 8vw, 120px); align-items: start; background: var(--cream); }
@@ -256,5 +276,5 @@ const gallery = [
   .gallery { padding:clamp(52px,7vw,86px) clamp(24px,7vw,112px); background:#fff; } .gallery-heading { margin-bottom:28px; } .gallery-grid { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:16px; } .gallery-grid img { display:block; width:100%; aspect-ratio:4 / 3; object-fit:cover; }
   .site-footer { display: grid; grid-template-columns:1.2fr 1fr 1fr; gap: 28px; padding: 32px clamp(24px, 7vw, 112px); background: #101410; color: #fff; font-size: .85rem; }
   .site-footer p { margin: 0; line-height:1.45; } .site-footer span { color:#b9c5b9; } .site-footer a { display:block; margin-bottom:8px; color:#fff; font-weight:750; }
-  @media (max-width: 760px) { .site-header { height: 76px; } .brand-mark { width: 54px; height: 54px; } nav { gap: 14px; font-size: .82rem; } nav a:nth-child(-n+3) { display: none; } .nav-donate { padding: 9px 12px; } .hero { min-height:520px; } .hero-shade { background:rgba(0,0,0,.55); } .reason-grid, .signup, .chart-grid, .map-section, .quote-section, .news-links, .common-ground { grid-template-columns:1fr; } .common-copy { padding:0; border:0; } .quote-section > img { max-height:420px; } .action, .site-footer { display:block; } .action-links { margin-top:30px; justify-items:start; } .site-footer p + p { margin-top:16px; } .gallery-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 760px) { .site-header { height: 76px; } .brand-mark { width: 54px; height: 54px; } nav { gap: 14px; font-size: .82rem; } nav a:nth-child(-n+3) { display: none; } .nav-donate { padding: 9px 12px; } .hero { min-height:520px; } .hero-shade { background:rgba(0,0,0,.55); } .reason-grid, .signup, .chart-grid, .map-section, .quote-section, .news-links, .common-ground, .what-works { grid-template-columns:1fr; } .common-copy { padding:0; border:0; } .quote-section > img { max-height:420px; } .action, .site-footer { display:block; } .action-links { margin-top:30px; justify-items:start; } .site-footer p + p { margin-top:16px; } .gallery-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); } }
 </style>
