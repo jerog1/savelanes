@@ -19,8 +19,10 @@ const reasons = [
   {
     image: '/images/business.jpg',
     label: 'Traffic',
-    title: 'More people moving without cars',
-    text: 'At Bloor rush hour, 1,849 people use the bike lane, compared with 1,741 motor vehicles next to it. Safe lanes give people an alternative to adding another car to the road.',
+    stat: '1,849',
+    statLabel: 'people used the Bloor bike lane in two rush-hour hours',
+    title: 'A lane that moves people without more cars',
+    text: 'From 5 to 7 p.m., the bike lane carried 1,849 bike and micromobility trips. The adjacent car lane carried 1,741 motor vehicles.',
     source: 'Bloor rush-hour count, reported by TorontoToday',
     sourceUrl: 'https://www.torontotoday.ca/local/transportation-infrastructure/bikes-outnumber-cars-bloor-street-west-rush-hour-data-10855921',
   },
@@ -28,7 +30,7 @@ const reasons = [
 
 const news = [
   { outlet: 'Global News', title: 'City report puts the cost of removal at $48 million', url: 'https://globalnews.ca/news/10868485/toronto-bike-lane-removal-cost-congestion-blame/' },
-  { outlet: 'Global News', title: 'Ford dismisses Toronto’s $48-million removal estimate', url: 'https://globalnews.ca/news/10877114/ontario-doug-ford-bike-lane-removal-cost-hogwash/' },
+  { outlet: 'TorontoToday', title: 'Rush-hour count finds bikes outnumber cars on Bloor Street West', url: 'https://www.torontotoday.ca/local/transportation-infrastructure/bikes-outnumber-cars-bloor-street-west-rush-hour-data-10855921' },
   { outlet: 'The Trillium', title: 'Government documents warn removal could worsen collisions and gridlock', url: 'https://www.thetrillium.ca/news/municipalities-transit-and-infrastructure/removing-bike-lanes-worsen-gridlock-increase-collisions-government-documents-10360308' },
   { outlet: 'TVO Today', title: 'Is there a right to bike lanes? Bill 212’s Charter challenge explained', url: 'https://www.tvo.org/article/is-there-a-right-to-bike-lanes-bill-212s-charter-challenge-explained' },
   { outlet: 'CycleTO', title: 'What happens next with Toronto’s bike lanes?', url: 'https://www.cycleto.ca/what_happens_next_with_torontos_bike_lanes' },
@@ -100,6 +102,7 @@ const gallery = [
               <img src={reason.image} alt="" loading="lazy" />
               <div class="reason-copy">
                 <p class="reason-label">{reason.label}</p>
+                {reason.stat && <p class="reason-stat"><strong>{reason.stat}</strong><span>{reason.statLabel}</span></p>}
                 <h3>{reason.title}</h3>
                 <p>{reason.text}</p>
                 <a class="source" href={reason.sourceUrl} target="_blank" rel="noreferrer">Source: {reason.source} ↗</a>
@@ -117,9 +120,9 @@ const gallery = [
           <a class="source" href="https://www.tcat.ca/wp-content/uploads/2017/12/Bloor-Economic-Impact-Study-Full-Report-2019-09-03.pdf" target="_blank" rel="noreferrer">Source: Bloor economic impact study ↗</a>
         </article>
         <article>
-          <p class="proof-stat">21–4</p>
+          <p class="proof-stat">21 to 4</p>
           <h2>Toronto City Council opposed the removals</h2>
-          <p>The province is overruling the council elected to decide how Toronto’s streets should work, despite a 21–4 vote against Bill 212.</p>
+          <p>The province is overruling the council elected to decide how Toronto’s streets should work, despite a 21 to 4 vote against Bill 212.</p>
           <a class="source" href="https://www.cbc.ca/news/canada/toronto/toronto-bike-lane-removal-city-council-1.7383223" target="_blank" rel="noreferrer">Source: CBC News ↗</a>
         </article>
       </section>
@@ -135,26 +138,43 @@ const gallery = [
         </div>
       </section>
 
-      <section class="quote-section chow-quote">
-        <img src="/images/gallery/ford-bike.jpg" alt="Mayor Olivia Chow with her bicycle" loading="lazy" />
-        <blockquote>
-          <p>“We provided drawings, we provided studies, we provided everything they want so that we could put in the bike lanes and bring back a car lane.”</p>
-          <footer>Mayor Olivia Chow, on the City’s proposed Bloor compromise</footer>
-          <a href="https://www.cycleto.ca/what_happens_next_with_torontos_bike_lanes" target="_blank" rel="noreferrer">Read the CycleTO update ↗</a>
-        </blockquote>
+      <section class="leaders" aria-labelledby="leaders-title">
+        <div class="leaders-intro">
+          <h2 id="leaders-title">Safety should be the starting point</h2>
+          <p>Both Toronto’s mayor and Ontario’s premier have said that people on bikes deserve safe streets</p>
+        </div>
+        <div class="leader-grid">
+          <article class="leader-card">
+            <img src="/images/gallery/chow-bike.jpg" alt="Mayor Olivia Chow with her bicycle" loading="lazy" />
+            <blockquote>
+              <p>“Bike lanes keep thousands of people safe. Everyone should be safe as they travel to work, school and around our city.”</p>
+              <footer>Mayor Olivia Chow</footer>
+              <a href="https://www.cycleto.ca/what_happens_next_with_torontos_bike_lanes" target="_blank" rel="noreferrer">Source and context ↗</a>
+            </blockquote>
+          </article>
+          <article class="leader-card">
+            <img src="/images/gallery/doug-ford.png" alt="Doug Ford wearing a bicycle helmet" loading="lazy" />
+            <blockquote>
+              <p>“You’re nervous when there’s no bike lanes. We have to do everything we can to make sure there’s never a death in the city. One death is way too many when it comes to bicycle riders.”</p>
+              <footer>Doug Ford, 2017</footer>
+              <a href="https://www.cycleto.ca/pedal_to_the_polls_on_february_27th" target="_blank" rel="noreferrer">Source: CycleTO ↗</a>
+            </blockquote>
+          </article>
+        </div>
       </section>
 
-      <section class="quote-section ford-quote">
-        <img src="/images/gallery/doug-ford.png" alt="Premier Doug Ford wearing a bicycle helmet" loading="lazy" />
-        <blockquote>
-          <p>“I want to work collaboratively with the Mayor … hopefully we can find alternatives.”</p>
-          <footer>Premier Doug Ford, June 2025</footer>
-          <a href="https://www.cycleto.ca/what_happens_next_with_torontos_bike_lanes" target="_blank" rel="noreferrer">Read the context at CycleTO ↗</a>
-        </blockquote>
-        <div class="ford-context">
-          <p>Ontario has bigger problems to solve: making housing affordable, strengthening health care and public transit, and protecting workers and businesses through U.S. tariff uncertainty. Instead, the province has chosen a cheap political fight, scapegoating people on bikes and overruling Toronto’s evidence-based street decisions.</p>
-          <a class="inline-source" href="https://budget.ontario.ca/2025/" target="_blank" rel="noreferrer">Ontario’s 2025 Budget ↗</a>
+      <section class="priorities" aria-labelledby="priorities-title">
+        <div>
+          <h2 id="priorities-title">Ontario has bigger priorities</h2>
+          <p>Housing, health care, transit, and protecting workers through tariff uncertainty all demand provincial attention. Toronto’s streets deserve decisions built on local evidence, not a costly detour.</p>
         </div>
+        <div class="priority-row" aria-label="Ontario priorities">
+          <div><span aria-hidden="true">⌂</span><b>Housing</b><small>Affordable homes</small></div>
+          <div><span aria-hidden="true">+</span><b>Health care</b><small>Strong public care</small></div>
+          <div><span aria-hidden="true">↔</span><b>Transit</b><small>Reliable service</small></div>
+          <div><span aria-hidden="true">↗</span><b>Workers</b><small>Tariff resilience</small></div>
+        </div>
+        <a class="inline-source" href="https://budget.ontario.ca/2025/" target="_blank" rel="noreferrer">Ontario’s 2025 Budget ↗</a>
       </section>
 
       <section class="map-section" aria-labelledby="map-title">
@@ -251,6 +271,9 @@ const gallery = [
   .reason-card > img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
   .reason-copy { padding: 22px; }
   .reason-label { margin-bottom:9px; color:var(--green); font-size:1rem; font-weight:900; letter-spacing:-.025em; }
+  .reason-stat { display:flex; align-items:baseline; gap:11px; margin:0 0 16px; padding:13px 0; border-top:1px solid #ced8ce; border-bottom:1px solid #ced8ce; }
+  .reason-stat strong { color:var(--green); font-size:2rem; line-height:1; letter-spacing:-.06em; }
+  .reason-stat span { max-width:170px; color:#416142; font-size:.76rem; font-weight:800; line-height:1.18; }
   h3 { margin-bottom: 10px; font-size: 1.35rem; letter-spacing: -.03em; }
   .reason-copy p:last-child { margin-bottom: 0; line-height: 1.48; }
   .source { display: inline-block; margin-top: 18px; color: #416142; font-size: .82rem; font-weight: 750; line-height: 1.35; }
@@ -266,13 +289,26 @@ const gallery = [
   .evidence-number { display:block; margin-bottom:8px; color:var(--green); font-size:clamp(2.6rem, 5vw, 4.1rem); line-height:.94; letter-spacing:-.065em; }
   .chart-card h3 { margin-bottom:10px; font-size:1.25rem; }
   .chart-card > p:not(.chart-label) { max-width:500px; margin:0; line-height:1.5; }
-  .quote-section { display:grid; grid-template-columns:minmax(260px, .7fr) minmax(0, 1.3fr); min-height:340px; background:#fff; }
-  .quote-section > img { width:100%; height:100%; min-height:300px; object-fit:cover; }
-  .quote-section blockquote { margin:0; padding:clamp(32px,5vw,64px); align-self:center; }
-  .quote-section blockquote p { max-width:670px; margin-bottom:20px; font-size:clamp(1.55rem,2.6vw,2.45rem); font-weight:850; line-height:1.1; letter-spacing:-.04em; }
-  .quote-section blockquote footer { margin-bottom:16px; color:#416142; font-weight:800; }
-  .quote-section blockquote a { font-weight:850; text-underline-offset:4px; }
-  .ford-quote { background:#eef3ea; color:var(--ink); } .ford-quote blockquote footer { color:#416142; } .ford-quote > img { object-position:center 35%; } .ford-context { grid-column:2; max-width:760px; padding:0 clamp(32px,5vw,64px) clamp(36px,5vw,64px); } .ford-context p { max-width:720px; margin:0 0 17px; padding-top:24px; border-top:1px solid #c5d4c5; font-size:1.02rem; font-weight:600; line-height:1.58; }
+  .leaders { padding:clamp(48px,6vw,76px) clamp(24px,7vw,112px); background:#eef3ea; }
+  .leaders-intro { max-width:690px; margin-bottom:34px; }
+  .leaders-intro h2 { margin-bottom:12px; }
+  .leaders-intro p { margin:0; font-size:1.08rem; line-height:1.55; }
+  .leader-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+  .leader-card { display:grid; grid-template-columns:116px minmax(0,1fr); gap:24px; align-items:start; padding:28px; background:#fff; }
+  .leader-card img { width:116px; height:116px; border:5px solid #e3eee3; border-radius:50%; object-fit:cover; }
+  .leader-card blockquote { margin:0; }
+  .leader-card blockquote p { margin:0 0 14px; font-family:Georgia, serif; font-size:clamp(1.12rem,1.65vw,1.45rem); font-style:italic; font-weight:700; line-height:1.32; }
+  .leader-card footer { margin-bottom:12px; color:#416142; font-size:.9rem; font-weight:850; }
+  .leader-card a { font-size:.88rem; font-weight:850; text-underline-offset:4px; }
+  .priorities { padding:clamp(48px,6vw,76px) clamp(24px,7vw,112px); background:#fff; }
+  .priorities > div:first-child { max-width:740px; }
+  .priorities > div:first-child p { max-width:690px; margin-bottom:30px; font-size:1.08rem; line-height:1.58; }
+  .priority-row { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin-bottom:24px; }
+  .priority-row > div { display:grid; gap:4px; min-height:145px; align-content:center; padding:20px; border-left:1px solid var(--line); }
+  .priority-row > div:first-child { border-left:0; }
+  .priority-row span { color:var(--green); font-size:2rem; font-weight:800; line-height:1; }
+  .priority-row b { margin-top:5px; font-size:1.05rem; }
+  .priority-row small { color:#416142; font-size:.84rem; font-weight:650; }
   .map-section { display:grid; grid-template-columns:minmax(0,.85fr) minmax(320px,1.15fr); gap:clamp(36px,6vw,80px); align-items:center; padding:clamp(48px,6vw,76px) clamp(24px,7vw,112px); background:var(--cream); } .map-section > div > p:not(.section-label) { max-width:570px; margin-bottom:24px; font-size:1.05rem; line-height:1.55; } .route-map { width:100%; height:auto; }
   .news { padding:clamp(48px,6vw,76px) clamp(24px,7vw,112px); background:var(--green); color:#fff; } .news-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; } .news-links a { min-height:98px; display:grid; align-content:start; gap:7px; padding:18px; background:#fff; color:var(--ink); font-size:1rem; font-weight:850; text-decoration:none; } .news-links a:hover { background:#ffe26b; } .news-links span { color:#416142; font-size:.73rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; } .news-links b { color:var(--green); font-size:1.1rem; }
   .signup { display: grid; grid-template-columns: minmax(0, 480px) minmax(330px, 520px); justify-content:start; gap: clamp(40px, 6vw, 88px); align-items: start; background: var(--cream); }
@@ -287,5 +323,5 @@ const gallery = [
   .gallery { padding:clamp(52px,7vw,86px) clamp(24px,7vw,112px); background:#fff; } .gallery-heading { margin-bottom:28px; } .gallery-grid { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:16px; } .gallery-grid img { display:block; width:100%; aspect-ratio:1; object-fit:cover; }
   .site-footer { display: grid; grid-template-columns:1.2fr 1fr 1fr; gap: 28px; padding: 32px clamp(24px, 7vw, 112px); background: #101410; color: #fff; font-size: .85rem; }
   .site-footer p { margin: 0; line-height:1.45; } .site-footer span { color:#b9c5b9; } .site-footer a { display:block; margin-bottom:8px; color:#fff; font-weight:750; }
-  @media (max-width: 760px) { .site-header { height: 76px; } .brand-mark { width: 54px; height: 54px; } nav { gap: 14px; font-size: .82rem; } nav a:nth-child(-n+3) { display: none; } .nav-petition { padding: 9px 12px; } .hero { min-height:520px; } .hero-shade { background:rgba(0,0,0,.55); } .hero-actions { align-items:stretch; flex-direction:column; } .hero-actions > a { text-align:center; } .reason-grid, .signup, .chart-grid, .map-section, .quote-section, .news-links, .common-ground, .supporting-facts { grid-template-columns:1fr; } .common-copy { padding:0; border:0; } .quote-section > img { max-height:420px; } .ford-context { grid-column:auto; padding:0 clamp(32px,5vw,64px) clamp(36px,5vw,64px); } .action, .site-footer { display:block; } .action-links { margin-top:30px; justify-items:start; } .site-footer p + p { margin-top:16px; } .gallery-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 760px) { .site-header { height: 76px; } .brand-mark { width: 54px; height: 54px; } nav { gap: 14px; font-size: .82rem; } nav a:nth-child(-n+3) { display: none; } .nav-petition { padding: 9px 12px; } .hero { min-height:520px; } .hero-shade { background:rgba(0,0,0,.55); } .hero-actions { align-items:stretch; flex-direction:column; } .hero-actions > a { text-align:center; } .reason-grid, .signup, .chart-grid, .map-section, .leader-grid, .news-links, .common-ground, .supporting-facts { grid-template-columns:1fr; } .common-copy { padding:0; border:0; } .leader-card { grid-template-columns:84px minmax(0,1fr); gap:18px; padding:22px; } .leader-card img { width:84px; height:84px; border-width:4px; } .priority-row { grid-template-columns:repeat(2,minmax(0,1fr)); } .priority-row > div:nth-child(odd) { border-left:0; } .priority-row > div { min-height:120px; } .action, .site-footer { display:block; } .action-links { margin-top:30px; justify-items:start; } .site-footer p + p { margin-top:16px; } .gallery-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); } }
 </style>
