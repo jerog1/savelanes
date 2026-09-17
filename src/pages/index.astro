@@ -3,6 +3,8 @@ const reasons = [
   {
     image: '/images/safety.jpg',
     label: 'Safety',
+    stat: '54%',
+    statLabel: 'more collisions projected after removal',
     title: 'Removal means more collisions',
     text: 'Ontario’s own analysis predicts a 54% increase in collisions if protected lanes are removed.',
     source: 'Ontario internal documents, reported by The Trillium',
@@ -11,6 +13,8 @@ const reasons = [
   {
     image: '/images/cost-construction.jpg',
     label: 'Cost',
+    stat: '$48M+',
+    statLabel: 'to remove lanes built for $27M',
     title: 'Millions to tear out lanes that work',
     text: 'Toronto estimates $48M+ to remove lanes built for $27M. The estimate covers only three of the six corridors at risk.',
     source: 'City Manager’s report to Toronto City Council',
@@ -20,7 +24,7 @@ const reasons = [
     image: '/images/business.jpg',
     label: 'Traffic',
     stat: '1,849',
-    statLabel: 'people used the Bloor bike lane in two rush-hour hours',
+    statLabel: 'bike and micromobility trips on Bloor, 5 to 7 p.m.',
     title: 'A lane that moves people without more cars',
     text: 'From 5 to 7 p.m., the bike lane carried 1,849 bike and micromobility trips. The adjacent car lane carried 1,741 motor vehicles.',
     source: 'Bloor rush-hour count, reported by TorontoToday',
@@ -112,6 +116,11 @@ const gallery = [
         </div>
       </section>
 
+      <section class="map-section routes-after-stats" aria-labelledby="map-title">
+        <div><h2 id="map-title">The routes being removed</h2><p>The province’s current RFP covers Bloor, Yonge, and University/Avenue Road</p><a class="inline-source" href="https://www.cycleto.ca/what_happens_next_with_torontos_bike_lanes" target="_blank" rel="noreferrer">CycleTO’s current corridor details ↗</a></div>
+        <img class="route-map" src="/images/removal-map-labelled.webp" alt="Map labelling the Bloor Street, Yonge Street, and University Avenue/Avenue Road bike lane removal corridors" loading="lazy" />
+      </section>
+
       <section class="supporting-facts" aria-label="Local evidence">
         <article>
           <p class="proof-stat">No negative<br />economic impact</p>
@@ -166,20 +175,15 @@ const gallery = [
       <section class="priorities" aria-labelledby="priorities-title">
         <div>
           <h2 id="priorities-title">Ontario has bigger priorities</h2>
-          <p>Housing, health care, transit, and protecting workers through tariff uncertainty all demand provincial attention. Toronto’s streets deserve decisions built on local evidence, not a costly detour.</p>
+          <p>Housing, health care, public transit, and the tariff war each need serious provincial attention. These are the problems that affect daily life across Ontario</p>
         </div>
         <div class="priority-row" aria-label="Ontario priorities">
-          <div><span aria-hidden="true">⌂</span><b>Housing</b><small>Affordable homes</small></div>
-          <div><span aria-hidden="true">+</span><b>Health care</b><small>Strong public care</small></div>
-          <div><span aria-hidden="true">↔</span><b>Transit</b><small>Reliable service</small></div>
-          <div><span aria-hidden="true">↗</span><b>Workers</b><small>Tariff resilience</small></div>
+          <a href="https://globalnews.ca/news/11287608/young-canadians-afforability/" target="_blank" rel="noreferrer"><img src="/images/priorities/housing.png" alt="House with dollar sign" /><b>Housing</b><small>Affordability is pushing young people out of the market</small></a>
+          <a href="https://www.policyalternatives.ca/news-research/hollowed-out/" target="_blank" rel="noreferrer"><img src="/images/priorities/healthcare.png" alt="Health care cross" /><b>Health care</b><small>Hospital vacancies and emergency closures remain urgent</small></a>
+          <a href="https://www.ttc.ca/news/2026/January/TTC-recommended-2026-budget-adds-service-while-keeping-fares-frozen" target="_blank" rel="noreferrer"><img src="/images/priorities/ttc.png" alt="TTC streetcar" /><b>Public transit</b><small>Reliable, affordable service needs continued investment</small></a>
+          <a href="https://apnews.com/article/426d47a8c5dfd8633431e385d9a85872" target="_blank" rel="noreferrer"><img src="/images/priorities/tariffs.png" alt="Abstract swept hair symbol for U.S. tariff uncertainty" /><b>Tariff war</b><small>Trade uncertainty is already raising costs for businesses</small></a>
         </div>
         <a class="inline-source" href="https://budget.ontario.ca/2025/" target="_blank" rel="noreferrer">Ontario’s 2025 Budget ↗</a>
-      </section>
-
-      <section class="map-section" aria-labelledby="map-title">
-        <div><h2 id="map-title">The routes at risk</h2><p>The province’s current RFP covers Bloor, Yonge, and University/Avenue Road</p><a class="inline-source" href="https://www.cycleto.ca/what_happens_next_with_torontos_bike_lanes" target="_blank" rel="noreferrer">CycleTO’s current corridor details ↗</a></div>
-        <img class="route-map" src="/images/removal-map.webp" alt="Map showing the Toronto bike lane removal corridors" loading="lazy" />
       </section>
 
       <section class="news" aria-labelledby="news-title">
@@ -304,12 +308,13 @@ const gallery = [
   .priorities > div:first-child { max-width:740px; }
   .priorities > div:first-child p { max-width:690px; margin-bottom:30px; font-size:1.08rem; line-height:1.58; }
   .priority-row { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin-bottom:24px; }
-  .priority-row > div { display:grid; gap:4px; min-height:145px; align-content:center; padding:20px; border-left:1px solid var(--line); }
-  .priority-row > div:first-child { border-left:0; }
-  .priority-row span { color:var(--green); font-size:2rem; font-weight:800; line-height:1; }
-  .priority-row b { margin-top:5px; font-size:1.05rem; }
-  .priority-row small { color:#416142; font-size:.84rem; font-weight:650; }
-  .map-section { display:grid; grid-template-columns:minmax(0,.85fr) minmax(320px,1.15fr); gap:clamp(36px,6vw,80px); align-items:center; padding:clamp(48px,6vw,76px) clamp(24px,7vw,112px); background:var(--cream); } .map-section > div > p:not(.section-label) { max-width:570px; margin-bottom:24px; font-size:1.05rem; line-height:1.55; } .route-map { width:100%; height:auto; }
+  .priority-row a { display:grid; gap:5px; min-height:198px; align-content:center; padding:20px; border-left:1px solid var(--line); color:inherit; text-decoration:none; }
+  .priority-row a:first-child { border-left:0; }
+  .priority-row a:hover { background:#eef3ea; }
+  .priority-row img { width:56px; height:56px; margin-bottom:7px; object-fit:contain; }
+  .priority-row b { font-size:1.05rem; }
+  .priority-row small { color:#416142; font-size:.84rem; font-weight:650; line-height:1.35; }
+  .map-section { display:grid; grid-template-columns:minmax(0,.85fr) minmax(320px,1.15fr); gap:clamp(36px,6vw,80px); align-items:center; padding:clamp(48px,6vw,76px) clamp(24px,7vw,112px); background:var(--cream); } .map-section > div > p:not(.section-label) { max-width:570px; margin-bottom:24px; font-size:1.05rem; line-height:1.55; } .route-map { width:100%; height:auto; } .routes-after-stats { border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:#eef3ea; }
   .news { padding:clamp(48px,6vw,76px) clamp(24px,7vw,112px); background:var(--green); color:#fff; } .news-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; } .news-links a { min-height:98px; display:grid; align-content:start; gap:7px; padding:18px; background:#fff; color:var(--ink); font-size:1rem; font-weight:850; text-decoration:none; } .news-links a:hover { background:#ffe26b; } .news-links span { color:#416142; font-size:.73rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; } .news-links b { color:var(--green); font-size:1.1rem; }
   .signup { display: grid; grid-template-columns: minmax(0, 480px) minmax(330px, 520px); justify-content:start; gap: clamp(40px, 6vw, 88px); align-items: start; background: var(--cream); }
   .signup > div > p:last-child { max-width: 580px; margin-bottom: 0; font-size: 1.1rem; line-height: 1.5; }
@@ -323,5 +328,5 @@ const gallery = [
   .gallery { padding:clamp(52px,7vw,86px) clamp(24px,7vw,112px); background:#fff; } .gallery-heading { margin-bottom:28px; } .gallery-grid { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:16px; } .gallery-grid img { display:block; width:100%; aspect-ratio:1; object-fit:cover; }
   .site-footer { display: grid; grid-template-columns:1.2fr 1fr 1fr; gap: 28px; padding: 32px clamp(24px, 7vw, 112px); background: #101410; color: #fff; font-size: .85rem; }
   .site-footer p { margin: 0; line-height:1.45; } .site-footer span { color:#b9c5b9; } .site-footer a { display:block; margin-bottom:8px; color:#fff; font-weight:750; }
-  @media (max-width: 760px) { .site-header { height: 76px; } .brand-mark { width: 54px; height: 54px; } nav { gap: 14px; font-size: .82rem; } nav a:nth-child(-n+3) { display: none; } .nav-petition { padding: 9px 12px; } .hero { min-height:520px; } .hero-shade { background:rgba(0,0,0,.55); } .hero-actions { align-items:stretch; flex-direction:column; } .hero-actions > a { text-align:center; } .reason-grid, .signup, .chart-grid, .map-section, .leader-grid, .news-links, .common-ground, .supporting-facts { grid-template-columns:1fr; } .common-copy { padding:0; border:0; } .leader-card { grid-template-columns:84px minmax(0,1fr); gap:18px; padding:22px; } .leader-card img { width:84px; height:84px; border-width:4px; } .priority-row { grid-template-columns:repeat(2,minmax(0,1fr)); } .priority-row > div:nth-child(odd) { border-left:0; } .priority-row > div { min-height:120px; } .action, .site-footer { display:block; } .action-links { margin-top:30px; justify-items:start; } .site-footer p + p { margin-top:16px; } .gallery-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 760px) { .site-header { height: 76px; } .brand-mark { width: 54px; height: 54px; } nav { gap: 14px; font-size: .82rem; } nav a:nth-child(-n+3) { display: none; } .nav-petition { padding: 9px 12px; } .hero { min-height:520px; } .hero-shade { background:rgba(0,0,0,.55); } .hero-actions { align-items:stretch; flex-direction:column; } .hero-actions > a { text-align:center; } .reason-grid, .signup, .chart-grid, .map-section, .leader-grid, .news-links, .common-ground, .supporting-facts { grid-template-columns:1fr; } .common-copy { padding:0; border:0; } .leader-card { grid-template-columns:84px minmax(0,1fr); gap:18px; padding:22px; } .leader-card img { width:84px; height:84px; border-width:4px; } .priority-row { grid-template-columns:repeat(2,minmax(0,1fr)); } .priority-row a:nth-child(odd) { border-left:0; } .priority-row a { min-height:155px; } .priority-row img { width:46px; height:46px; } .action, .site-footer { display:block; } .action-links { margin-top:30px; justify-items:start; } .site-footer p + p { margin-top:16px; } .gallery-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); } }
 </style>
